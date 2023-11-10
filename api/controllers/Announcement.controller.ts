@@ -1,4 +1,4 @@
-import Prof from "../models/Profs.mode";
+import Prof from "../models/Profs.model.ts";
 import { errorHandler } from "../utils/error.ts";
 import express, { Request, Response, NextFunction } from "express";
 
@@ -132,10 +132,10 @@ export async function announDelete(
     );
 
     if (!delteAnnoun) {
-      next(errorHandler(404, "Professor not found"));
+      next(errorHandler(404, "Professor is not found"));
     }
 
-    res.status(201).json({ message: "announcemnt deleted" });
+    res.status(201).json({ message: "announcemnt is deleted" });
   } catch (error) {
     next(error);
   }

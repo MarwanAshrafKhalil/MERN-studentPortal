@@ -6,6 +6,7 @@ const courseSchema = new mongoose.Schema({
     {
       name: { type: String, required: true },
       topic: { type: String, required: true },
+      createdAt: { type: Date, required: true },
       dueDate: { type: Date, required: true },
       isAvailable: { type: Boolean, required: true, default: true },
       content: [
@@ -22,6 +23,7 @@ const courseSchema = new mongoose.Schema({
       name: { type: String, required: true },
       topic: { type: String, required: true },
       dueDate: { type: Date, required: true },
+      isAvailable: { type: Boolean, required: true, default: true },
       content: [
         {
           question: { type: String, required: true },
