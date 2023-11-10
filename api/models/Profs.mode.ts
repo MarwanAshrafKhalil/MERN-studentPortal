@@ -5,9 +5,9 @@ const profSchema = new mongoose.Schema({
 
   announcements: [
     {
-      title: { type: String },
-      content: { type: String },
-      createdAt: { type: Date, default: Date.now },
+      title: String,
+      content: String,
+      createdAt: Date,
     },
   ],
 });

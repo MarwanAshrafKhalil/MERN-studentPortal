@@ -7,6 +7,7 @@ type RequestBody = {
   announId?: string;
   title?: string;
   content?: string;
+  all?: boolean;
 };
 
 // type RequestBodyD = {
@@ -18,6 +19,13 @@ type ResponseBody = {
   message: string;
 };
 
+export function test(
+  req: Request<{}, {}, RequestBody>,
+  res: Response<ResponseBody>
+) {
+  res.json({ message: "test" });
+}
+
 export async function announCreate(
   req: Request<{}, {}, RequestBody>,
   res: Response<ResponseBody>,
@@ -25,18 +33,28 @@ export async function announCreate(
 ) {
   try {
     const { profId, title, content } = req.body;
+
     const existingProf = await Prof.findOne({ _id: profId });
+    const createdAt: Date = new Date();
 
     if (existingProf) {
       const announcement = {
         title,
         content,
-        createdAt: new Date(),
+        createdAt,
       };
+
       existingProf.announcements.push(announcement);
-      await existingProf.save().then(() => {
-        res.status(201).json({ message: `${title}+created` });
-      });
+      console.log(existingProf.announcements);
+
+      await existingProf
+        .save()
+        .then(() => {
+          res
+            .status(201)
+            .json({ message: `\`${title}\` announcement is created` });
+        })
+        .catch((error) => next(errorHandler(404, error)));
     } else {
       next(errorHandler(401, "cant find the professor"));
     }
@@ -51,15 +69,22 @@ export async function announGet(
   next: NextFunction
 ) {
   try {
-    const { profId } = req.body;
+    const { profId, all } = req.body;
 
-    const lastAnnoun = await Prof.findOne({ _id: profId })
-      .sort({ "announcements.createdAt": -1 })
-      .limit(1);
+    const lastAnnoun = await Prof.findOne(
+      { _id: profId },
+      { announcements: { $slice: -1 } }
+    );
+
     if (!lastAnnoun) {
       next(errorHandler(401, "no announcements found"));
     }
-    res.status(201).json({ lastAnnoun });
+
+    if (all) {
+      res.status(201).json(lastAnnoun?.announcements);
+    } else {
+      res.status(201).json(lastAnnoun?.announcements[0]);
+    }
   } catch (error) {
     next(errorHandler(401, "cant find the professor"));
   }
@@ -77,13 +102,13 @@ export async function announUpdate(
       { _id: profId, "announcements._id": announId },
       {
         $set: {
-          "announcement.$.title": title,
-          "announcement.$.content": content,
+          "announcements.$.title": title,
+          "announcements.$.content": content,
         },
       }
     );
 
-    if (!updateAnnoun) {
+    if (!updateAnnoun || !updateAnnoun.acknowledged) {
       next(errorHandler(404, "Professor or announcement not found "));
     }
 

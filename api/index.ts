@@ -6,13 +6,13 @@ import mongoose from "mongoose";
 // import employeeRoutes from "./routes/Employee.route.js";
 // import authRoutes from "./routes/auth.route.js";
 // import punchRoutes from "./routes/punch.route.js";
+import announRoute from "./routes/announ.route.ts";
 dotenv.config();
 
-console.log("monog: ", process.env.MONGO);
-const mongoConnectionString: string = process.env.mongo || "";
+// const mongoConnectionString: string = process.env.mongo || "";
 
 mongoose
-  .connect(mongoConnectionString)
+  .connect(process.env.MONGO!)
   .then(() => {
     console.log("connected to MongoDB");
   })
@@ -29,7 +29,7 @@ app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
 
-// app.use("/api/announ");
+app.use("/api/announ", announRoute);
 
 // app.use("/api/auth", authRoutes);
 // app.use("/api/employee", employeeRoutes);
