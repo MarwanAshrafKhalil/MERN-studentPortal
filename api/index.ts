@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 // import authRoutes from "./routes/auth.route.js";
 // import punchRoutes from "./routes/punch.route.js";
 import announRoute from "./routes/announ.route.ts";
+import quizRoute from "./routes/quiz.route.ts";
 dotenv.config();
 
 // const mongoConnectionString: string = process.env.mongo || "";
@@ -30,6 +31,7 @@ app.listen(3000, () => {
 });
 
 app.use("/api/announ", announRoute);
+app.use("/api/quiz", quizRoute);
 
 // app.use("/api/auth", authRoutes);
 // app.use("/api/employee", employeeRoutes);

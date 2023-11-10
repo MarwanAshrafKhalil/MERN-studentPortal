@@ -85,8 +85,8 @@ export async function quizGet(
     const { courseId, all, index } = req.body;
 
     const quizzesData = await Course.findOne(
-      { _id: courseId },
-      { quizzes: { $slice: -1 } } //need to re check this line in both controls
+      { _id: courseId }
+      //   { quizzes: { $slice: -1 } } //need to re check this line in both controls
     );
 
     if (!quizzesData) {
@@ -128,6 +128,8 @@ export async function quizUpdate(
         },
       }
     );
+
+    console.log(updateQuiz);
 
     if (!updateQuiz || !updateQuiz.acknowledged) {
       next(errorHandler(404, "Course or quiz not found "));
