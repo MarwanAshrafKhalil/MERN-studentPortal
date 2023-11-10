@@ -57,17 +57,24 @@ export async function quizCreate(
         content,
       };
 
-      existingCourse.quizzes.push(quiz);
-      console.log(existingCourse.quizzes);
-
-      await existingCourse
-        .save()
+      await Course.updateOne({ _id: courseId }, { $push: { quizzes: quiz } })
         .then(() => {
           res
             .status(201)
             .json({ message: `\`${name} - ${topic}\` quiz is created` });
         })
         .catch((error) => next(errorHandler(404, error)));
+      //   existingCourse.quizzes.push(quiz);
+      //   console.log(existingCourse.quizzes);
+
+      //   await existingCourse
+      //     .save()
+      //     .then(() => {
+      //       res
+      //         .status(201)
+      //         .json({ message: `\`${name} - ${topic}\` quiz is created` });
+      //     })
+      //     .catch((error) => next(errorHandler(404, error)));
     } else {
       next(errorHandler(401, "cant find the course"));
     }
