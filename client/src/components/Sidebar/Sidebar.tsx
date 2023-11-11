@@ -8,12 +8,15 @@ import {
 } from "@mui/icons-material";
 
 import { Link } from "react-router-dom";
+import logo from "../../assets/Udemy-Logo.png";
 import "./_sidebar.scss";
 
 function Sidebar() {
   return (
     <nav className="sidebar">
-      <Link className="sidebar__link " to="/">
+      <img className="sidebar__image" src={logo} alt="" />
+
+      <Link className="sidebar__link " to="/dashboard">
         <li>
           <Home className="sidebar__icon" />
           <p>Dashboard</p>

@@ -1,0 +1,63 @@
+@import "../../base.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: white;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 0.5rem 1rem 2rem;
+
+  height: 11vh;
+  width: 100%;
+
+  // top: 0;
+
+  h1 {
+    background: transparent;
+    color: rgb(133, 133, 133);
+    font-size: x-large;
+  }
+
+  &__nav {
+    display: flex;
+    margin: 2rem;
+    gap: 1rem;
+    align-items: center;
+    background: transparent;
+
+    form {
+      display: flex;
+      align-items: center;
+      margin: 2rem;
+      padding: 0.2rem;
+      padding-left: 0.5rem;
+
+      background: transparent;
+
+      border-radius: 1rem;
+      border: 1.5px solid;
+      border-color: rgb(201, 201, 201);
+
+      input {
+        background: transparent;
+        padding-left: 1rem;
+        font-size: medium;
+        border: 0;
+      }
+
+      button {
+        border: 0;
+        background: transparent;
+      }
+    }
+
+    &__icon {
+      color: #388696;
+      margin: 0.2rem;
+    }
+  }
+}
