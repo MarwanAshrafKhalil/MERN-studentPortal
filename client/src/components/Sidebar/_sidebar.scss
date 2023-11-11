@@ -1,7 +1,8 @@
 @import "../../_base.scss";
 
 .sidebar {
-  background: $black-secondary;
+  //   background: $black-secondary;
+  background: linear-gradient(to bottom, #12567b, #388696);
 
   display: flex;
   flex-direction: column;
@@ -20,29 +21,25 @@
 
   &__link {
     align-items: center;
-    color: white;
+    text-decoration: none;
     gap: 2rem;
     background: transparent;
+
+    &:hover {
+      background-color: $hover-color;
+      .sidebar__icon,
+      p {
+        color: black !important;
+      }
+    }
   }
 
   &__icon {
-    background: transparent;
+    background: none !important;
   }
 
   @media (max-width: 768px) {
     /* Add your styles for smaller screens here */
-  }
-
-  a {
-    color: $text-color;
-
-    text-decoration: none;
-    &:hover {
-      color: $text-color;
-      width: 250px;
-      left: 0%;
-      align-items: left;
-    }
   }
 
   li {
@@ -57,23 +54,9 @@
     p {
       background: transparent;
     }
-
-    // span {
-    //     margin-left: 1rem;
-    //     font-size: 14px;
-    //     font-weight: 500;
-    //     letter-spacing: 0.4px;
-    //     background-color: transparent;
-
-    // }
-
     &:hover {
-      background-color: $border-color;
+      color: #2ad6ba;
     }
-  }
-
-  hr {
-    background-color: $border-color;
   }
 
   &.open {

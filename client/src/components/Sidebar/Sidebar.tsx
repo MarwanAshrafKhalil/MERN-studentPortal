@@ -22,33 +22,33 @@ function Sidebar() {
 
       <Link className="sidebar__link " to="/">
         <li>
-          <CalendarMonth />
+          <CalendarMonth className="sidebar__icon" />
           <p>Schedule</p>
         </li>
       </Link>
       <Link className="sidebar__link " to="/">
         <li>
-          <ImportContacts />
+          <ImportContacts className="sidebar__icon" />
           <p>Courses</p>
         </li>
       </Link>
 
       <Link className=" sidebar__link" to="/">
         <li>
-          <School />
+          <School className="sidebar__icon" />
           <p>Gradebook</p>
         </li>
       </Link>
 
       <Link className=" sidebar__link" to="/">
         <li>
-          <ShowChart />
+          <ShowChart className="sidebar__icon" />
           <p>Performance</p>
         </li>
       </Link>
       <Link className="sidebar__link " to="/">
         <li>
-          <Campaign />
+          <Campaign className="sidebar__icon" />
           <p>Announcements</p>
         </li>
       </Link>
