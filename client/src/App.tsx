@@ -1,13 +1,15 @@
-
-import './App.scss'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./_app.scss";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
-  
-
   return (
-  
-      <div className='app'>App</div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Sidebar />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

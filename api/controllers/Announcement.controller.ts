@@ -45,7 +45,7 @@ export async function announCreate(
       };
 
       existingProf.announcements.push(announcement);
-      console.log(existingProf.announcements);
+      // console.log(existingProf.announcements);
 
       await existingProf
         .save()
