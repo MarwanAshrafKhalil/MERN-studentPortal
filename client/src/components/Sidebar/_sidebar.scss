@@ -1,81 +1,97 @@
 @import "../../_base.scss";
 
-.sidebar{
-    
-    background: $black-secondary;
+.sidebar {
+  background: $black-secondary;
 
+  display: flex;
+  flex-direction: column;
+
+  width: 250px;
+  height: 100vh;
+  padding-top: 2rem;
+  padding-left: 0rem;
+  gap: 2rem;
+  transition: transform 0.2s ease-in;
+  align-items: left;
+  overflow: hidden;
+  position: sticky;
+  top: 10vh;
+  left: 0;
+
+  &__link {
+    align-items: center;
+    color: white;
+    gap: 2rem;
+    background: transparent;
+  }
+
+  &__icon {
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    /* Add your styles for smaller screens here */
+  }
+
+  a {
+    color: $text-color;
+
+    text-decoration: none;
+    &:hover {
+      color: $text-color;
+      width: 250px;
+      left: 0%;
+      align-items: left;
+    }
+  }
+
+  li {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    margin: 0.2rem 0;
+    gap: 1rem;
+    cursor: pointer;
+    background: transparent;
 
-    width: 250px;
-    height: 90vh;
-    padding-top: 2rem;
-    transition: transform 0.2s ease-in;
-
-    position: sticky;
-    top: 10vh;
-    left: 0;
-
-    @media (max-width: 768px) {
-        /* Add your styles for smaller screens here */
-      }
-
-    a {
-        color: $text-color;
-        text-decoration: none;
-        &:hover {
-           color: $text-color;
-           
-        }
-     }
-
-
-    li{
-        display: flex;
-        align-items: center;
-
-        padding: 0.6rem 1.5rem;
-        margin: 0.2rem 0;
-        cursor: pointer;
-        // background-color: transparent;
-        
-
-        span {
-            margin-left: 1rem;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.4px;
-            // background-color: transparent;
-            
-        }
-
-
-        &:hover{
-            background-color: $border-color;
-
-        }
+    p {
+      background: transparent;
     }
 
-    hr {
-        background-color: $border-color;
-    }
+    // span {
+    //     margin-left: 1rem;
+    //     font-size: 14px;
+    //     font-weight: 500;
+    //     letter-spacing: 0.4px;
+    //     background-color: transparent;
 
-    &.open {
+    // }
+
+    &:hover {
+      background-color: $border-color;
+    }
+  }
+
+  hr {
+    background-color: $border-color;
+  }
+
+  &.open {
     transform: translateX(0);
-    }
+  }
 }
 
-@media (max-width: $breakpoint-medium) {
-    .sidebar{
-        width: 90px;
+// @media (max-width: $breakpoint-medium) {
+//     .sidebar{
+//         width: 90px;
 
-        li {
-            justify-content: center;
-        }
+//         li {
+//             justify-content: center;
+//         }
 
-        span{
-            display: none;
-        }
-    }
-    
-}
+//         span{
+//             display: none;
+//         }
+//     }
+
+// }

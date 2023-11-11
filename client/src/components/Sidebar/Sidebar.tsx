@@ -15,7 +15,7 @@ function Sidebar() {
     <nav className="sidebar">
       <Link className="sidebar__link " to="/">
         <li>
-          <Home />
+          <Home className="sidebar__icon" />
           <p>Dashboard</p>
         </li>
       </Link>
