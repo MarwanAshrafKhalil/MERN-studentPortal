@@ -45,6 +45,7 @@
       input {
         background: transparent;
         padding-left: 1rem;
+        width: 20rem;
         font-size: medium;
         border: 0;
       }
@@ -58,6 +59,8 @@
     &__icon {
       color: #388696;
       margin: 0.2rem;
+      width: 24px;
+      height: 24px;
     }
   }
 }

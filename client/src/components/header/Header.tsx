@@ -1,4 +1,3 @@
-import React from "react";
 import "./_header.scss";
 import {
   Search,
@@ -28,6 +27,7 @@ function Header() {
         </form>
 
         <Notifications className="header__nav__icon" />
+
         <Email className="header__nav__icon" />
         <AccountCircle className="header__nav__icon" />
       </div>
