@@ -1,10 +1,10 @@
-import { Dashboard } from "@mui/icons-material";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./_app.scss";
 import Sidebar from "./components/sidebar/Sidebar";
 import { ReactNode } from "react";
 import Header from "./components/header/Header";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 type LayoutProps = {
   children: ReactNode;

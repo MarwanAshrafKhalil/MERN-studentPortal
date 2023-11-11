@@ -10,17 +10,18 @@
 
 //         .item
 //     }
-// }
+// }.
+
 .app {
   &__container {
     display: flex;
     flex-direction: row;
-    flex: 1;
     // margin-top: 10vh;
   }
 
   &__main {
     width: 500px;
     flex: 1;
+    --bs-gutter-x: 0 !important;
   }
 }
