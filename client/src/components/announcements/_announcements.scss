@@ -83,3 +83,14 @@
 .prof__icon {
   margin-right: 0.5rem;
 }
+
+.vertical {
+  top: 0;
+  margin-top: 0;
+  left: 50%;
+  margin-inline: 1rem;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: gray;
+}

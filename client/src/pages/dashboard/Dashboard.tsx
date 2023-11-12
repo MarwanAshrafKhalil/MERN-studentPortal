@@ -3,6 +3,7 @@ import "./dashboard.scss";
 import { Col, Row } from "react-bootstrap";
 import Hero from "../../components/hero/Hero";
 import Announcements from "../../components/announcements/Announcements";
+import Tasks from "../../components/tasks/Tasks";
 
 function Dashboard() {
   return (
@@ -10,12 +11,11 @@ function Dashboard() {
       <Hero />
 
       <Row>
-        <Col xs={12} md={8}>
+        <Col xs={12} md={8} lg={9}>
           <Announcements />
-          {/* <div className="col-content dashboard__announ">Content for col 8</div> */}
         </Col>
-        <Col xs={12} md={4}>
-          <div className="col-content dashboard__tasks">Content for col 4</div>
+        <Col xs={12} md={4} lg={3}>
+          <Tasks />
         </Col>
       </Row>
     </div>

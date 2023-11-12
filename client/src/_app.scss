@@ -1,3 +1,6 @@
+.app__container {
+  display: flex;
+}
 .app__main {
   width: 500px;
 }
@@ -20,8 +23,9 @@
   }
 
   &__main {
-    width: 500px;
-    flex: 1;
+    // width: 500px;
+    // flex: 1;
+
     --bs-gutter-x: 0 !important;
   }
 }

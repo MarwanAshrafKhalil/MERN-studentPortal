@@ -18,6 +18,8 @@ function Announcements() {
             <p>Mr.Ahmed Mostafa</p>
             <p className="course">Math 101</p>
           </div>
+          <hr className="vertical" />
+
           <div className="announce__data__single__content">
             <p>
               Reminder: The deadline for submitting your research paper is
@@ -33,6 +35,8 @@ function Announcements() {
             <p>Mr.Ahmed Mostafa</p>
             <p className="course">Math 101</p>
           </div>
+          <hr className="vertical" />
+
           <div className="announce__data__single__content">
             <p>
               Attention students: The guest lecture scheduled for tomorrow has
@@ -48,6 +52,8 @@ function Announcements() {
             <p>Mr.Ahmed Mostafa</p>
             <p className="course">Math 101</p>
           </div>
+          <hr className="vertical" />
+
           <div className="announce__data__single__content">
             <p>
               Important notice: The registration for next semester's courses

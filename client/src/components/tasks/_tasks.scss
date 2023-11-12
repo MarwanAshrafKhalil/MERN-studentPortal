@@ -1,0 +1,94 @@
+@import "../../base.scss";
+
+.tasks {
+  background-color: white;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(70, 70, 70, 0.2);
+
+  width: 100%;
+  height: 100%;
+
+  &__title {
+    background: transparent;
+    top: 0;
+    left: 0;
+    margin-bottom: 1rem;
+    // align-items: start;
+
+    h2 {
+      font-weight: bold;
+      font-size: x-large;
+      background: transparent;
+    }
+    span {
+      background: transparent;
+      font-size: small;
+    }
+  }
+
+  &__quizz {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &__title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
+      //   gap: 1rem;
+      background: transparent;
+
+      p {
+        margin-bottom: 0;
+        font-weight: bold;
+        padding-left: 0.5rem;
+        background: transparent;
+      }
+    }
+
+    &__details {
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      font-size: small;
+
+      color: gray;
+      span {
+        background: transparent;
+      }
+    }
+
+    &__button {
+      color: #55abbd;
+      font-weight: 700;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      padding: 0.25rem;
+      background-color: transparent;
+      border: 2px solid #55abbd;
+    }
+
+    &__icon {
+      color: #388696;
+      fill: #388696;
+      //   margin: 0.2rem;
+    }
+  }
+}
+
+.vertical_line {
+  color: #388696;
+  border-width: 0.1rem;
+}
