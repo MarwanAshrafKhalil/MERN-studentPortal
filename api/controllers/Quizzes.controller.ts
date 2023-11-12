@@ -122,9 +122,14 @@ export async function quizGetAll(
 
     const quizzesData = await Course.find({});
 
-    if (!quizzesData) {
+    const containsQuizzes = quizzesData.some(
+      (item) => Array.isArray(item.quizzes) && item.quizzes.length > 0
+    );
+    if (!quizzesData || containsQuizzes) {
       next(errorHandler(401, "no quizzes found"));
     }
+
+    // console.log(containsQuizzes);
 
     const quizzes = quizzesData.map((doc) => {
       return doc.toObject().quizzes.map((quiz) => {
@@ -137,7 +142,7 @@ export async function quizGetAll(
     //     courseName: doc.name,
     //   };
     // });
-    console.log(quizzes);
+    // console.log(quizzes);
 
     res.status(201).json(quizzes);
   } catch (error) {

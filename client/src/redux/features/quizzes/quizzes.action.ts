@@ -7,7 +7,10 @@ export const fetchQuizzes = () => async (dispatch) => {
   dispatch(quizActions.openLoader());
   try {
     const response = await requestFromServer.getQuizzes();
-    const responseData = await response.json();
+    let responseData;
+    if (response) {
+      responseData = await response.json();
+    }
     console.log("22#: ", responseData);
     if (responseData.success === false) {
       dispatch(quizActions.catchError(responseData));

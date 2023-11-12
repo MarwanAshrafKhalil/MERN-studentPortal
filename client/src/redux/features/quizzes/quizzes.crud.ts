@@ -7,6 +7,6 @@ export async function getQuizzes() {
       },
     });
   } catch (error) {
-    console.log("didnt ", error);
+    console.log("rejected - ", error);
   }
 }
