@@ -1,8 +1,16 @@
 import React from "react";
 import "./_announcements.scss";
 import { AccountCircle } from "@mui/icons-material";
+import { useAppSelector } from "../../redux/app/hooks";
 
 function Announcements() {
+  const announGroup = useAppSelector((state) => state.announs.data);
+  const { name, ...rest } = announGroup;
+  // console.log(name);
+  // console.log(announGroup.name);
+  // console.log(announGroup.name);
+
+  announGroup.map((item) => console.log(item.name));
   return (
     <div className="announce">
       <div className="announce__title">
@@ -11,6 +19,26 @@ function Announcements() {
       </div>
 
       <div className="announce__data">
+        {announGroup &&
+          announGroup.map((item) => (
+            <div className="announce__data__single">
+              <AccountCircle
+                className="prof__icon"
+                style={{ fontSize: "48px" }}
+              />
+
+              <div className="announce__data__single__prof">
+                <p>{item.name}</p>
+                <p className="course">Math 101</p>
+              </div>
+              <hr className="vertical" />
+
+              <div className="announce__data__single__content">
+                <p>{item.announcements[-1]}</p>
+              </div>
+            </div>
+          ))}
+
         <div className="announce__data__single">
           <AccountCircle className="prof__icon" style={{ fontSize: "48px" }} />
 

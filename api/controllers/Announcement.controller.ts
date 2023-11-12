@@ -106,7 +106,7 @@ export async function announGetAll(
       next(errorHandler(401, "no announcements found"));
     }
 
-    console.log(announsData);
+    // console.log(announsData);
 
     // const announs = quizzesData.map((doc) => {
     //   return {
@@ -118,7 +118,7 @@ export async function announGetAll(
 
     res.status(201).json(announsData);
   } catch (error) {
-    next(errorHandler(401, "cant find the course"));
+    next(errorHandler(401, "cant find the Teacher"));
   }
 }
 

@@ -11,13 +11,6 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  // const [sidebar, toggleSidebar] = useState(false);
-
-  // const handleToggleSidebar = (): void => {
-  //   toggleSidebar((value: boolean) => !value);
-  // };
-  console.log(children);
-
   return (
     <>
       <div className="app__container ">

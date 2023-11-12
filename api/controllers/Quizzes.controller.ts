@@ -121,11 +121,15 @@ export async function quizGetAll(
     const { courseId, all, index } = req.body;
 
     const quizzesData = await Course.find({});
+    // console.log(quizzesData);
 
     const containsQuizzes = quizzesData.some(
       (item) => Array.isArray(item.quizzes) && item.quizzes.length > 0
     );
-    if (!quizzesData || containsQuizzes) {
+
+    // console.log(containsQuizzes);
+
+    if (!quizzesData || !containsQuizzes) {
       next(errorHandler(401, "no quizzes found"));
     }
 
@@ -146,6 +150,7 @@ export async function quizGetAll(
 
     res.status(201).json(quizzes);
   } catch (error) {
+    console.log(error);
     next(errorHandler(401, "cant find the course"));
   }
 }
