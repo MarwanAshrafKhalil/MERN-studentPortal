@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import employeeReducer from "../features/employee/employee.slice";
-import punchReducer from "../features/punch/punch.slice";
+import quizzesReducer from "../features/quizzes/quizzes.slice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -12,8 +11,7 @@ const persistCofnig = {
 };
 
 const rootReducer = combineReducers({
-  employee: employeeReducer,
-  punch: punchReducer,
+  quizzes: quizzesReducer,
 });
 const persistedReducer = persistReducer(persistCofnig, rootReducer);
 

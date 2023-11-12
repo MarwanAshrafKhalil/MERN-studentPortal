@@ -112,6 +112,39 @@ export async function quizGet(
   }
 }
 
+export async function quizGetAll(
+  req: Request<{}, {}, RequestBody>,
+  res: Response<any>,
+  next: NextFunction
+) {
+  try {
+    const { courseId, all, index } = req.body;
+
+    const quizzesData = await Course.find({});
+
+    if (!quizzesData) {
+      next(errorHandler(401, "no quizzes found"));
+    }
+
+    const quizzes = quizzesData.map((doc) => {
+      return doc.toObject().quizzes.map((quiz) => {
+        return { ...quiz, courseName: doc.name };
+      });
+    });
+    // const quizzes = quizzesData.map((doc) => {
+    //   return {
+    //     ...doc.quizzes,
+    //     courseName: doc.name,
+    //   };
+    // });
+    console.log(quizzes);
+
+    res.status(201).json(quizzes);
+  } catch (error) {
+    next(errorHandler(401, "cant find the course"));
+  }
+}
+
 export async function quizUpdate(
   req: Request<{}, {}, RequestBodyCU>,
   res: Response<ResponseBody>,
