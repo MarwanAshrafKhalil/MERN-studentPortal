@@ -14,7 +14,6 @@ import "./_sidebar.scss";
 
 function Sidebar() {
   const [t, i18n] = useTranslation();
-  console.log(i18n.language);
 
   return (
     <nav className="sidebar">
