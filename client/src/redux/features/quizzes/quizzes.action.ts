@@ -11,7 +11,7 @@ export const fetchQuizzes = () => async (dispatch) => {
     if (response) {
       responseData = await response.json();
     }
-    console.log("22#: ", responseData);
+
     if (responseData.success === false) {
       dispatch(quizActions.catchError(responseData));
     } else {

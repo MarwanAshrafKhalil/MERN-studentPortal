@@ -30,3 +30,5 @@ NOTES:
 -the css is affected by other file having same class names, check allTasks and tasks, right margin and same for announcements: of changed the margin and height to auto the vertical line disappear form announ in dashboard
 
 -gray line at bottom of all tasks
+
+-dispatch error in actions files

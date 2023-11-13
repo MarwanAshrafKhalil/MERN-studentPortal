@@ -6,7 +6,6 @@ import "./allTasks.scss";
 function AllTasks() {
   const quizzesGroup = useAppSelector((state) => state.quizzes.data);
 
-  console.log("print: ", quizzesGroup);
   return (
     <div className="tasks">
       <div className="tasks__title">

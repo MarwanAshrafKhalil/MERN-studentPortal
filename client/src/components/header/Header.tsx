@@ -5,8 +5,11 @@ import {
   Email,
   AccountCircle,
 } from "@mui/icons-material/";
+import { useTranslation } from "react-i18next";
 
 function Header() {
+  const [t, i18n] = useTranslation();
+
   return (
     <div className="header">
       <h1>Welcome!</h1>
