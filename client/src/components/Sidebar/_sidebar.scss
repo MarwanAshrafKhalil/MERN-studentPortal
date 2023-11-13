@@ -15,29 +15,18 @@
   transition: transform 0.2s ease-in;
   position: sticky;
 
-  // transition: transform 0.2s ease-in;
-  // align-items: center;
-  // text-align: left;
   overflow: hidden;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
 
   &__image {
-    // background: transparent;
     max-width: 150px;
-    // margin: auto;
     margin: 2rem 0rem 2rem 0rem;
     margin-inline: auto;
   }
 
   &__link {
-    // align-items: center;
     text-decoration: none;
     display: flex;
     align-items: left;
-    // gap: 1rem;
-    // background: transparent;
 
     &:hover {
       background-color: $hover-color;
@@ -49,7 +38,6 @@
   }
 
   &__icon {
-    // background: none !important;
     color: white;
     &:hover {
       color: white;
@@ -64,10 +52,8 @@
     margin: 0.2rem 0;
     gap: 1rem;
     cursor: pointer;
-    // background: transparent;
 
     p {
-      // background: transparent;
       color: white;
 
       margin-bottom: 0;
@@ -76,21 +62,28 @@
 
   &.open {
     transform: translateX(0);
+
+    // display: block;
   }
 }
 
-@media (max-width: $breakpoint-medium) {
+@media (max-width: 1200px) {
   .sidebar {
-    width: 90px;
-
-    li {
-      justify-content: center;
-    }
-
-    span {
-      display: none;
-    }
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 999;
   }
+  // .sidebar {
+  //   width: 90px;
+
+  //   li {
+  //     justify-content: center;
+  //   }
+
+  //   span {
+  //     display: none;
+  //   }
+  // }
 }
 
 @media (max-width: $breakpoint-small) {

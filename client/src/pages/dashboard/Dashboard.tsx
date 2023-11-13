@@ -23,7 +23,7 @@ function Dashboard() {
     <div className="dashboard">
       <Hero />
 
-      <Row>
+      <Row className="dashboard__lower">
         <Col xs={12} md={8} lg={9}>
           <Announcements />
         </Col>

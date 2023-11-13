@@ -12,7 +12,9 @@ function Hero() {
           greatness.
         </p>
         <span>"Nothing happens until something moves" - Albert Einstien</span>
-        <button type="button">View exams tips</button>
+        <button className="hero__info__button" type="button">
+          View exams tips
+        </button>
       </div>
 
       <div className="hero__media">

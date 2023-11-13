@@ -26,6 +26,8 @@
   }
 
   &__menu {
+    color: #388696;
+    margin-inline: 2rem;
     display: none;
   }
 
@@ -75,17 +77,17 @@
   }
 }
 
-@media (max-width: $breakpoint-small) {
+@media (max-width: 880px) {
   .header {
     padding: 1rem;
 
     form {
-      flex: 1;
+      display: none;
     }
 
-    &__menu {
-      display: block;
-    }
+    // &__menu {
+    //   display: block !important;
+    // }
 
     &__logo {
       display: none;
@@ -93,6 +95,14 @@
 
     &__icons > *:not(img) {
       display: none;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    &__menu {
+      display: none !important;
     }
   }
 }

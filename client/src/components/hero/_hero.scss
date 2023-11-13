@@ -1,11 +1,8 @@
 @import "../../base.scss";
-* {
-  //   background: transparent;
-}
 
 .hero {
   height: 300px;
-  // margin: 1rem;
+
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -20,13 +17,13 @@
 
   button {
     padding: 0.5rem;
-    width: 50%;
+    width: 40%;
     border: none;
     color: white;
     background-color: #55abbd;
     border-radius: 0.5rem;
-    // margin-bottom: 1rem;
-    margin-top: 1rem;
+
+    margin-top: 2rem;
 
     &:focus {
       outline: none;
@@ -35,16 +32,10 @@
 
   &__info {
     padding-left: 2rem;
-    // background: transparent;
-    // margin: 3rem;
+
     width: 60%;
     display: flex;
     flex-direction: column;
-    h1,
-    p,
-    span {
-      // background: transparent;
-    }
 
     h1 {
       font-size: xx-large;
@@ -61,10 +52,7 @@
   }
 
   &__media {
-    // background: transparent;
-
     &__img {
-      // background: transparent;
       object-fit: cover;
       width: 100%;
     }
@@ -72,4 +60,53 @@
 }
 .container {
   display: flex;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    &__info {
+      font-size: small;
+      align-items: center;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    &__media {
+      &__img {
+        display: none;
+      }
+    }
+  }
+}
+@media (min-width: 1100px) {
+  .hero {
+    &__media {
+      &__img {
+        width: 150%;
+        padding-right: 10rem;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    &__info {
+      font-size: smaller;
+      align-items: center;
+      margin-inline: auto;
+      text-align: center;
+      width: 100%;
+      padding-left: 0;
+
+      button {
+        width: 60%;
+      }
+    }
+    &__media {
+      &__img {
+        width: 150%;
+        padding-right: 10rem;
+      }
+    }
+  }
 }

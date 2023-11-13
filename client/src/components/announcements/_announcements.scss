@@ -4,7 +4,7 @@
   overflow: hidden;
   border-radius: 1rem;
 
-  margin: 1rem auto;
+  // margin: 1rem auto;
   padding: 2rem;
 
   display: flex;
@@ -103,4 +103,15 @@
   width: 2px;
   height: 100%;
   background-color: gray;
+}
+
+@media (max-width: 766px) {
+  .announce {
+    margin-bottom: 1rem;
+    &__data {
+      &__single {
+        flex-direction: column;
+      }
+    }
+  }
 }
