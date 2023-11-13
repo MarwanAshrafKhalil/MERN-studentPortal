@@ -26,10 +26,16 @@ function Header() {
           />
         </form>
 
-        <Notifications className="header__nav__icon" />
+        <Notifications
+          className="header__nav__icon"
+          style={{ fontSize: "30px" }}
+        />
 
-        <Email className="header__nav__icon" />
-        <AccountCircle className="header__nav__icon" />
+        <Email className="header__nav__icon" style={{ fontSize: "30px" }} />
+        <AccountCircle
+          className="header__nav__icon"
+          style={{ fontSize: "30px" }}
+        />
       </div>
     </div>
   );

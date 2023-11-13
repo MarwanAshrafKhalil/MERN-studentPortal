@@ -1,6 +1,7 @@
 import Course from "../models/Courses.model.ts";
 import { errorHandler } from "../utils/error.ts";
 import express, { Request, Response, NextFunction } from "express";
+import { Aggregate } from "mongoose";
 
 interface quizBody {
   question: string;
@@ -118,37 +119,26 @@ export async function quizGetAll(
   next: NextFunction
 ) {
   try {
-    const { courseId, all, index } = req.body;
+    const quizzesData = await Course.find({}, null, {
+      sort: { "quizzes.createdAt": 1 },
+    });
 
-    const quizzesData = await Course.find({});
-    // console.log(quizzesData);
+    // { announcements: { $slice: -1 } }
 
     const containsQuizzes = quizzesData.some(
       (item) => Array.isArray(item.quizzes) && item.quizzes.length > 0
     );
 
-    // console.log(containsQuizzes);
-
     if (!quizzesData || !containsQuizzes) {
       next(errorHandler(401, "no quizzes found"));
     }
-
-    // console.log(containsQuizzes);
-
     const quizzes = quizzesData.map((doc) => {
       return doc.toObject().quizzes.map((quiz) => {
         return { ...quiz, courseName: doc.name };
       });
     });
-    // const quizzes = quizzesData.map((doc) => {
-    //   return {
-    //     ...doc.quizzes,
-    //     courseName: doc.name,
-    //   };
-    // });
-    // console.log(quizzes);
 
-    res.status(201).json(quizzes);
+    res.status(201).json(quizzesData);
   } catch (error) {
     console.log(error);
     next(errorHandler(401, "cant find the course"));

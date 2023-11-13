@@ -25,3 +25,8 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+NOTES:
+-the css is affected by other file having same class names, check allTasks and tasks, right margin and same for announcements: of changed the margin and height to auto the vertical line disappear form announ in dashboard
+
+-gray line at bottom of all tasks

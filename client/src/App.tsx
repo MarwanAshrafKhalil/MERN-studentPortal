@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import Header from "./components/header/Header";
 import Dashboard from "./pages/dashboard/Dashboard";
 import AllAnnouncements from "./pages/allAnnouncements/AllAnnouncements";
+import AllTasks from "./pages/allTasks/AllTasks";
 
 type LayoutProps = {
   children: ReactNode;
@@ -44,6 +45,15 @@ function App() {
           element={
             <Layout>
               <AllAnnouncements />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/tasks"
+          element={
+            <Layout>
+              <AllTasks />
             </Layout>
           }
         />

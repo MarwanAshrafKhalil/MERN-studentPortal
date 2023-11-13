@@ -1,29 +1,10 @@
-.app__container {
-  display: flex;
-}
-
-// .contaier{
-//     background: #000;
-//     &.acto{}
-
-//     .list{
-//         ....
-
-//         .item
-//     }
-// }.
-
 .app {
   &__container {
     display: flex;
     flex-direction: row;
-    // margin-top: 10vh;
   }
 
   &__main {
-    // width: 500px;
-    // flex: 1;
-
     --bs-gutter-x: 0 !important;
   }
 }
