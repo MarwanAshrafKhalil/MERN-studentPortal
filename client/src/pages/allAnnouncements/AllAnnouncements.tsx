@@ -1,10 +1,11 @@
 import { AccountCircle } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+
 import { useAppDispatch, useAppSelector } from "../../redux/app/hooks";
 import "./allAnnouncements.scss";
 
-import { fetchAnnouns } from "../../redux/features/announs/announs.action";
 import { useEffect } from "react";
+import { fetchAnnouns } from "../../redux/features/announs/announs.action";
+import { MoonLoader } from "react-spinners";
 
 function AllAnnouncements() {
   const dispatch = useAppDispatch();
@@ -16,7 +17,10 @@ function AllAnnouncements() {
       console.log(error);
     }
   }, []);
-  const announGroup = useAppSelector((state) => state.announs.data);
+
+  const { data: announGroup, isLoading } = useAppSelector(
+    (state) => state.announs
+  );
 
   return (
     <div className="allannounce">
@@ -25,27 +29,31 @@ function AllAnnouncements() {
         <p>These are the recents announcements</p>
       </div>
 
-      <div className="allannounce__data">
-        {announGroup &&
-          announGroup.map((item, index) => (
-            <div key={index} className="allannounce__data__single">
-              <AccountCircle
-                className="prof__icon"
-                style={{ fontSize: "48px" }}
-              />
+      {isLoading ? (
+        <MoonLoader className="loader" color="#388696" />
+      ) : (
+        <div className="allannounce__data">
+          {announGroup &&
+            announGroup.map((item, index) => (
+              <div key={index} className="allannounce__data__single">
+                <AccountCircle
+                  className="prof__icon"
+                  style={{ fontSize: "48px" }}
+                />
 
-              <div className="allannounce__data__single__prof">
-                <p>{item.name}</p>
-                <p className="course">{item.course}</p>
-              </div>
-              <hr className="vertical" />
+                <div className="allannounce__data__single__prof">
+                  <p>{item.name}</p>
+                  <p className="course">{item.course}</p>
+                </div>
+                <hr className="vertical" />
 
-              <div className="allannounce__data__single__content">
-                <p>{item.announcements[0].content}</p>
+                <div className="allannounce__data__single__content">
+                  <p>{item.announcements[0].content}</p>
+                </div>
               </div>
-            </div>
-          ))}
-      </div>
+            ))}
+        </div>
+      )}
     </div>
   );
 }

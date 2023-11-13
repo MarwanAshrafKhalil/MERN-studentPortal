@@ -1,12 +1,14 @@
-import React from "react";
-import "./_tasks.scss";
-import { HourglassBottom, Assignment } from "@mui/icons-material";
-import { useAppSelector } from "../../redux/app/hooks";
+import { Assignment, HourglassBottom } from "@mui/icons-material";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../redux/app/hooks";
+import "./_tasks.scss";
+import { MoonLoader } from "react-spinners";
 
 function Tasks() {
-  const quizzesGroup = useAppSelector((state) => state.quizzes.data);
+  const { data: quizzesGroup, isLoading } = useAppSelector(
+    (state) => state.quizzes
+  );
 
   return (
     <div className="tasks">
@@ -18,31 +20,39 @@ function Tasks() {
         <span>Check the due quizzes and assignments</span>
       </div>
 
-      {quizzesGroup &&
-        quizzesGroup.slice(0, 1).map((item, index) => (
-          <div key={index} className="tasks__quizz">
-            <div className="tasks__quizz__title">
-              <HourglassBottom
-                className="tasks__quizz__icon"
-                style={{ fontSize: "30px" }}
-              />
-              <p>{item.quizzes[index].name}</p>
-            </div>
+      {isLoading ? (
+        <MoonLoader className="loader" color="#388696" />
+      ) : (
+        <>
+          {quizzesGroup &&
+            quizzesGroup.slice(0, 1).map((item, index) => (
+              <div key={index} className="tasks__quizz">
+                <div className="tasks__quizz__title">
+                  <HourglassBottom
+                    className="tasks__quizz__icon"
+                    style={{ fontSize: "30px" }}
+                  />
+                  <p>{item.quizzes[index].name}</p>
+                </div>
 
-            <div className="tasks__quizz__details">
-              <span> Course: {item.name}</span>
-              <span> Topic: {item.quizzes[index].topic}</span>
-              <span>
-                Due to:{" "}
-                {moment(item.quizzes[index].dueDate.toString()).format("LL")}
-              </span>
-            </div>
-            <button type="button" className="tasks__quizz__button">
-              {" "}
-              Start Quiz{" "}
-            </button>
-          </div>
-        ))}
+                <div className="tasks__quizz__details">
+                  <span> Course: {item.name}</span>
+                  <span> Topic: {item.quizzes[index].topic}</span>
+                  <span>
+                    Due to:{" "}
+                    {moment(item.quizzes[index].dueDate.toString()).format(
+                      "LL"
+                    )}
+                  </span>
+                </div>
+                <button type="button" className="tasks__quizz__button">
+                  {" "}
+                  Start Quiz{" "}
+                </button>
+              </div>
+            ))}
+        </>
+      )}
 
       {/* <div className="tasks__quizz">
         <div className="tasks__quizz__title">

@@ -34,27 +34,27 @@ export const Sidebar: React.FC<Props> = ({ sidebar, handleToggleSidebar }) => {
         </li>
       </Link>
 
-      <Link className="sidebar__link " to="/">
+      <Link className="sidebar__link " to="/dashboard">
         <li>
           <CalendarMonth className="sidebar__icon" />
           <p>{t("Schedule")}</p>
         </li>
       </Link>
-      <Link className="sidebar__link " to="/">
+      <Link className="sidebar__link " to="/dashboard">
         <li>
           <ImportContacts className="sidebar__icon" />
           <p>{t("Courses")}</p>
         </li>
       </Link>
 
-      <Link className=" sidebar__link" to="/">
+      <Link className=" sidebar__link" to="/dashboard">
         <li>
           <School className="sidebar__icon" />
           <p>{t("Gradebook")}</p>
         </li>
       </Link>
 
-      <Link className=" sidebar__link" to="/">
+      <Link className=" sidebar__link" to="/dashboard">
         <li>
           <ShowChart className="sidebar__icon" />
           <p>{t("Performance")}</p>

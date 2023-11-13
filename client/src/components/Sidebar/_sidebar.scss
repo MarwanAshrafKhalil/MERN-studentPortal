@@ -1,7 +1,6 @@
 @import "../../_base.scss";
 
 .sidebar {
-  //   background: $black-secondary;
   background: linear-gradient(to bottom, #12567b, #388696);
   display: flex;
   flex-direction: column;
@@ -62,8 +61,6 @@
 
   &.open {
     transform: translateX(0);
-
-    // display: block;
   }
 }
 
@@ -73,17 +70,6 @@
     position: fixed;
     z-index: 999;
   }
-  // .sidebar {
-  //   width: 90px;
-
-  //   li {
-  //     justify-content: center;
-  //   }
-
-  //   span {
-  //     display: none;
-  //   }
-  // }
 }
 
 @media (max-width: $breakpoint-small) {

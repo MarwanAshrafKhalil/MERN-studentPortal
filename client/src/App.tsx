@@ -1,41 +1,18 @@
-import { Container } from "react-bootstrap";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./_app.scss";
-import Sidebar from "./components/sidebar/Sidebar";
-import { ReactNode, useEffect, useState } from "react";
-import Header from "./components/header/Header";
-import Dashboard from "./pages/dashboard/Dashboard";
-import AllAnnouncements from "./pages/allAnnouncements/AllAnnouncements";
-import AllTasks from "./pages/allTasks/AllTasks";
+
 import i18next from "i18next";
+import SignIn from "./pages/signIn/SignIn";
+import MainApp from "./components/MainApp";
+import PrivateRoute from "./components/PrivateRoute";
+import { useEffect, useState } from "react";
+import { useAppSelector } from "./redux/app/hooks";
 
-type LayoutProps = {
-  children: ReactNode;
-};
+interface AppProps {}
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [sidebar, toggleSidebar] = useState(false);
-
-  const handleToggleSidebar: () => void = () => {
-    // debugger;
-    toggleSidebar((sidebar) => !sidebar);
-  };
-  return (
-    <>
-      <div className=" app__container">
-        <Sidebar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
-
-        <Container fluid className="app__main ">
-          <Header handleToggleSidebar={handleToggleSidebar} />
-          {children}
-        </Container>
-      </div>
-    </>
-  );
-};
-
-function App() {
+const App: React.FC<AppProps> = () => {
   const [currentLanguage, setCurrentLanguage] = useState(i18next.language);
+  const login = useAppSelector((state) => state.loginPunch.loginState);
 
   useEffect(() => {
     const handleLanguageChange = () => {
@@ -53,36 +30,16 @@ function App() {
     <div dir={currentLanguage == "ar" ? "rtl" : "ltr"}>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/dashboard"
-            element={
-              <Layout>
-                <Dashboard />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/announcements"
-            element={
-              <Layout>
-                <AllAnnouncements />
-              </Layout>
-            }
-          />
-
-          <Route
-            path="/tasks"
-            element={
-              <Layout>
-                <AllTasks />
-              </Layout>
-            }
-          />
+          <Route path="/" element={<Navigate to="/signin" />} />
+          <Route path="/signin" element={<SignIn />} />
+          debugger;
+          <Route element={<PrivateRoute login={login} />}>
+            <Route path="/*" element={login && <MainApp />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

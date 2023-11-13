@@ -7,12 +7,17 @@ import {
   Menu,
 } from "@mui/icons-material/";
 import { useTranslation } from "react-i18next";
+import { loggOut } from "../../redux/features/signIn/signIn.action";
+import { useAppDispatch } from "../../redux/app/hooks";
+
 export interface HeaderProps {
   handleToggleSidebar: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ handleToggleSidebar }) => {
   const [t, i18n] = useTranslation();
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className="header">
@@ -45,6 +50,11 @@ export const Header: React.FC<HeaderProps> = ({ handleToggleSidebar }) => {
           className="header__nav__icon"
           style={{ fontSize: "30px" }}
         />
+
+        <button className="header__button" onClick={() => dispatch(loggOut())}>
+          {" "}
+          Sign Out
+        </button>
       </div>
     </div>
   );
