@@ -2,99 +2,101 @@
 
 .alltasks {
   background-color: white;
-  height: 300px;
+  // height: 300px;
   overflow: hidden;
   border-radius: 1rem;
-
-  margin: 2rem;
+  // margin: 1rem;
   padding: 2rem;
-
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 4px rgba(70, 70, 70, 0.2);
 
-  width: 100%;
+  width: auto;
   height: auto;
 
-  p {
-    background: transparent;
+  &__all {
+    // background: transparent;
+    text-align: right;
+    color: #388696;
+    font-weight: 700;
   }
 
   &__title {
-    background: transparent;
+    // background: transparent;
     top: 0;
     left: 0;
     margin-bottom: 1rem;
+    // align-items: start;
 
-    align-items: start;
     h2 {
       font-weight: bold;
       font-size: x-large;
-      background: transparent;
+      // background: transparent;
     }
-    // p {
-    //   font-size: medium;
-    //   color: gray;
-    //   background: transparent;
-    // }
+    span {
+      // background: transparent;
+      font-size: small;
+    }
   }
 
-  &__data {
-    background: transparent;
+  &__quizz {
     display: flex;
     flex-direction: column;
+    // background: transparent;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
-    &__single {
+    &__title {
       display: flex;
       flex-direction: row;
-      background: transparent;
-      // margin-bottom: 1rem;
-      padding-bottom: 2rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      //   gap: 1rem;
+      // background: transparent;
 
-      &__prof {
-        display: flex;
-        flex-direction: column;
-        margin-right: 2rem;
-        font-size: large;
+      p {
+        margin-bottom: 0;
         font-weight: bold;
-        background: transparent;
-        width: 30%;
-
-        p {
-          margin-bottom: 0;
-        }
-
-        // margin-bottom: 0;
-        // flex-direction: row;
+        padding-left: 0.5rem;
+        // background: transparent;
       }
-      &__content {
-        font-size: medium;
-        width: 70%;
-        background: transparent;
-        color: gray;
+    }
+
+    &__details {
+      // background: transparent;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      font-size: small;
+
+      color: gray;
+      span {
+        // background: transparent;
       }
+    }
+
+    &__button {
+      margin: auto;
+      width: 60%;
+      color: #55abbd;
+      font-weight: 700;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      padding: 0.25rem;
+      background-color: transparent;
+      border: 2px solid #55abbd;
+    }
+
+    &__icon {
+      color: #388696;
     }
   }
 }
 
-.course {
-  font-size: medium;
-  font-weight: 400;
-
-  color: gray;
-}
-
-.prof__icon {
-  margin-right: 0.5rem;
-}
-
-.vertical {
-  top: 0;
-  margin-top: 0;
-  left: 50%;
-  margin-inline: 1rem;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background-color: gray;
+.vertical_line {
+  color: #388696;
+  border-width: 0.1rem;
 }

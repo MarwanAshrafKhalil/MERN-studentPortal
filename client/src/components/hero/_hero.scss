@@ -35,7 +35,7 @@
 
   &__info {
     padding-left: 2rem;
-    background: transparent;
+    // background: transparent;
     // margin: 3rem;
     width: 60%;
     display: flex;
@@ -43,7 +43,7 @@
     h1,
     p,
     span {
-      background: transparent;
+      // background: transparent;
     }
 
     h1 {
@@ -61,10 +61,10 @@
   }
 
   &__media {
-    background: transparent;
+    // background: transparent;
 
     &__img {
-      background: transparent;
+      // background: transparent;
       object-fit: cover;
       width: 100%;
     }

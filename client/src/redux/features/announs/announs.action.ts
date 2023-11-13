@@ -1,9 +1,10 @@
 import * as requestFromServer from "./announs.crud";
 import { announsSlice } from "./announs.slice";
+import { Dispatch } from "redux";
 
 const { actions: announActions } = announsSlice;
 
-export const fetchAnnouns = () => async (dispatch) => {
+export const fetchAnnouns = () => async (dispatch: Dispatch) => {
   dispatch(announActions.openLoader());
   try {
     const response = await requestFromServer.getAnnoun();

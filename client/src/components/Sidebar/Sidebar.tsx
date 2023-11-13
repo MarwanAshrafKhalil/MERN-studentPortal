@@ -12,11 +12,19 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/Udemy-Logo.png";
 import "./_sidebar.scss";
 
-function Sidebar() {
+interface Props {
+  sidebar: boolean;
+  handleToggleSidebar: () => void;
+}
+
+export const Sidebar: React.FC<Props> = ({ sidebar, handleToggleSidebar }) => {
   const [t, i18n] = useTranslation();
 
   return (
-    <nav className="sidebar">
+    <nav
+      className={sidebar ? "sidebar open" : "sidebar"}
+      onClick={() => handleToggleSidebar()}
+    >
       <img className="sidebar__image" src={logo} alt="" />
 
       <Link className="sidebar__link " to="/dashboard">
@@ -52,7 +60,7 @@ function Sidebar() {
           <p>{t("Performance")}</p>
         </li>
       </Link>
-      <Link className="sidebar__link " to="/">
+      <Link className="sidebar__link " to="/announcements">
         <li>
           <Campaign className="sidebar__icon" />
           <p>{t("Announcements")}</p>
@@ -81,6 +89,6 @@ function Sidebar() {
       )} */}
     </nav>
   );
-}
+};
 
 export default Sidebar;

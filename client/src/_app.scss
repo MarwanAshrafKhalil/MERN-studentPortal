@@ -2,9 +2,14 @@
   &__container {
     display: flex;
     flex-direction: row;
+    background: #f2f6f9;
   }
 
   &__main {
     --bs-gutter-x: 0 !important;
   }
+}
+
+* {
+  box-sizing: border-box;
 }

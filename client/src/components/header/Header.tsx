@@ -4,14 +4,20 @@ import {
   Notifications,
   Email,
   AccountCircle,
+  Menu,
 } from "@mui/icons-material/";
 import { useTranslation } from "react-i18next";
+export interface HeaderProps {
+  handleToggleSidebar: () => void;
+}
 
-function Header() {
+export const Header: React.FC<HeaderProps> = ({ handleToggleSidebar }) => {
   const [t, i18n] = useTranslation();
 
   return (
     <div className="header">
+      <Menu className="header__menu" onClick={() => handleToggleSidebar()} />
+
       <h1>Welcome!</h1>
 
       <div className="header__nav">
@@ -42,6 +48,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

@@ -5,7 +5,7 @@
   // height: 300px;
   overflow: hidden;
   border-radius: 1rem;
-  margin: 1rem;
+  // margin: 1rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -15,14 +15,14 @@
   // height: 100%;
 
   &__all {
-    background: transparent;
+    // background: transparent;
     text-align: right;
     color: #388696;
     font-weight: 700;
   }
 
   &__title {
-    background: transparent;
+    // background: transparent;
     top: 0;
     left: 0;
     margin-bottom: 1rem;
@@ -31,10 +31,10 @@
     h2 {
       font-weight: bold;
       font-size: x-large;
-      background: transparent;
+      // background: transparent;
     }
     span {
-      background: transparent;
+      // background: transparent;
       font-size: small;
     }
   }
@@ -42,7 +42,7 @@
   &__quizz {
     display: flex;
     flex-direction: column;
-    background: transparent;
+    // background: transparent;
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -53,18 +53,18 @@
       align-items: center;
       margin-bottom: 1rem;
       //   gap: 1rem;
-      background: transparent;
+      // background: transparent;
 
       p {
         margin-bottom: 0;
         font-weight: bold;
         padding-left: 0.5rem;
-        background: transparent;
+        // background: transparent;
       }
     }
 
     &__details {
-      background: transparent;
+      // background: transparent;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -73,7 +73,7 @@
 
       color: gray;
       span {
-        background: transparent;
+        // background: transparent;
       }
     }
 

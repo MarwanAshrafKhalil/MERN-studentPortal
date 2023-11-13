@@ -140,7 +140,7 @@ export async function quizGetAll(
 
     res.status(201).json(quizzesData);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     next(errorHandler(401, "cant find the course"));
   }
 }
@@ -168,8 +168,6 @@ export async function quizUpdate(
         },
       }
     );
-
-    console.log(updateQuiz);
 
     if (!updateQuiz || !updateQuiz.acknowledged) {
       next(errorHandler(404, "Course or quiz not found "));

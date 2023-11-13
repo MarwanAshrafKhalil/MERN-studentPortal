@@ -15,18 +15,18 @@
   height: auto;
 
   p {
-    background: transparent;
+    // background: transparent;
   }
 
   &__all {
-    background: transparent;
+    // background: transparent;
     text-align: right;
     color: #388696;
     font-weight: 700;
   }
 
   &__title {
-    background: transparent;
+    // background: transparent;
     top: 0;
     left: 0;
     margin-bottom: 1rem;
@@ -35,7 +35,7 @@
     h2 {
       font-weight: bold;
       font-size: x-large;
-      background: transparent;
+      // background: transparent;
     }
     // p {
     //   font-size: medium;
@@ -45,14 +45,14 @@
   }
 
   &__data {
-    background: transparent;
+    // background: transparent;
     display: flex;
     flex-direction: column;
 
     &__single {
       display: flex;
       flex-direction: row;
-      background: transparent;
+      // background: transparent;
       // margin-bottom: 1rem;
       padding-bottom: 2rem;
 
@@ -62,7 +62,7 @@
         margin-right: 2rem;
         font-size: large;
         font-weight: bold;
-        background: transparent;
+        // background: transparent;
         width: 30%;
 
         p {
@@ -75,7 +75,7 @@
       &__content {
         font-size: medium;
         width: 70%;
-        background: transparent;
+        // background: transparent;
         color: gray;
       }
     }

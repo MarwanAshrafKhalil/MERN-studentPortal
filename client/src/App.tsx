@@ -14,13 +14,19 @@ type LayoutProps = {
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [sidebar, toggleSidebar] = useState(false);
+
+  const handleToggleSidebar: () => void = () => {
+    // debugger;
+    toggleSidebar((sidebar) => !sidebar);
+  };
   return (
     <>
-      <div className="app__container ">
-        <Sidebar />
+      <div className=" app__container">
+        <Sidebar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
 
         <Container fluid className="app__main ">
-          <Header />
+          <Header handleToggleSidebar={handleToggleSidebar} />
           {children}
         </Container>
       </div>
