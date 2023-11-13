@@ -11,7 +11,7 @@
 
   padding: 1rem 0.5rem 1rem 2rem;
 
-  height: 11vh;
+  height: 10vh;
   width: 100%;
 
   // top: 0;
@@ -20,6 +20,7 @@
     background: transparent;
     color: rgb(133, 133, 133);
     font-size: x-large;
+    margin-bottom: 0;
   }
 
   &__nav {
@@ -48,6 +49,10 @@
         width: 20rem;
         font-size: medium;
         border: 0;
+
+        &:focus {
+          outline: none;
+        }
       }
 
       button {

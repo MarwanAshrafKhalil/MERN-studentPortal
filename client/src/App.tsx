@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import { ReactNode } from "react";
 import Header from "./components/header/Header";
 import Dashboard from "./pages/dashboard/Dashboard";
+import AllAnnouncements from "./pages/allAnnouncements/AllAnnouncements";
 
 type LayoutProps = {
   children: ReactNode;
@@ -18,7 +19,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         <Container fluid className="app__main ">
           <Header />
-
           {children}
         </Container>
       </div>
@@ -35,6 +35,15 @@ function App() {
           element={
             <Layout>
               <Dashboard />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/announcements"
+          element={
+            <Layout>
+              <AllAnnouncements />
             </Layout>
           }
         />
