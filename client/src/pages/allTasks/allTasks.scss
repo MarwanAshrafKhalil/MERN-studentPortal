@@ -1,0 +1,100 @@
+@import "../../base.scss";
+
+.alltasks {
+  background-color: white;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 1rem;
+
+  margin: 2rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(70, 70, 70, 0.2);
+
+  width: 100%;
+  height: auto;
+
+  p {
+    background: transparent;
+  }
+
+  &__title {
+    background: transparent;
+    top: 0;
+    left: 0;
+    margin-bottom: 1rem;
+
+    align-items: start;
+    h2 {
+      font-weight: bold;
+      font-size: x-large;
+      background: transparent;
+    }
+    // p {
+    //   font-size: medium;
+    //   color: gray;
+    //   background: transparent;
+    // }
+  }
+
+  &__data {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+
+    &__single {
+      display: flex;
+      flex-direction: row;
+      background: transparent;
+      // margin-bottom: 1rem;
+      padding-bottom: 2rem;
+
+      &__prof {
+        display: flex;
+        flex-direction: column;
+        margin-right: 2rem;
+        font-size: large;
+        font-weight: bold;
+        background: transparent;
+        width: 30%;
+
+        p {
+          margin-bottom: 0;
+        }
+
+        // margin-bottom: 0;
+        // flex-direction: row;
+      }
+      &__content {
+        font-size: medium;
+        width: 70%;
+        background: transparent;
+        color: gray;
+      }
+    }
+  }
+}
+
+.course {
+  font-size: medium;
+  font-weight: 400;
+
+  color: gray;
+}
+
+.prof__icon {
+  margin-right: 0.5rem;
+}
+
+.vertical {
+  top: 0;
+  margin-top: 0;
+  left: 50%;
+  margin-inline: 1rem;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: gray;
+}

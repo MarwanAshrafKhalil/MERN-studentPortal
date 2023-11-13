@@ -2,17 +2,24 @@
 
 .tasks {
   background-color: white;
-  height: 300px;
+  // height: 300px;
   overflow: hidden;
   border-radius: 1rem;
-  margin: 1rem auto;
-  padding: 1rem;
+  margin: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 4px rgba(70, 70, 70, 0.2);
 
   width: 100%;
-  height: 100%;
+  // height: 100%;
+
+  &__all {
+    background: transparent;
+    text-align: right;
+    color: #388696;
+    font-weight: 700;
+  }
 
   &__title {
     background: transparent;
@@ -71,6 +78,8 @@
     }
 
     &__button {
+      margin: auto;
+      width: 60%;
       color: #55abbd;
       font-weight: 700;
       margin-top: 1rem;

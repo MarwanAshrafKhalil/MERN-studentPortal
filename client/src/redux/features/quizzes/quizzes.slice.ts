@@ -1,11 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+// interface Quiz {
+//   name: string;
+//   topic: string;
+//   dueDate: Date;
+//   content: string[];
+//   courseName: string;
+// }
+
 interface Quiz {
   name: string;
-  topic: string;
-  dueDate: Date;
-  content: string[];
-  courseName: string;
+
+  assignments: [];
+  quizzes: { name: string; topic: string; dueDate: Date; content: string[] }[];
 }
 
 interface QuizzesState {
