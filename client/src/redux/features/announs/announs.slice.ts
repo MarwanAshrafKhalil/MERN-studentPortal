@@ -1,8 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface announcements {
+  title: string;
+  content: string;
+  createdAt: Date;
+  _id: string;
+}
 interface Announc {
   name: string;
-  announcements: string[];
+  course: string;
+  announcements: announcements[];
 }
 
 interface AnnouncState {

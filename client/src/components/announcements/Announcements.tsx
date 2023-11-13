@@ -1,18 +1,16 @@
-import React from "react";
 import "./_announcements.scss";
 import { AccountCircle } from "@mui/icons-material";
 import { useAppSelector } from "../../redux/app/hooks";
+import { Link } from "react-router-dom";
 
 function Announcements() {
   const announGroup = useAppSelector((state) => state.announs.data);
-  const { name, ...rest } = announGroup;
-  // console.log(name);
-  // console.log(announGroup.name);
-  // console.log(announGroup.name);
 
-  announGroup.map((item) => console.log(item.name));
   return (
     <div className="announce">
+      <Link to={"/announcements"} className="announce__all">
+        All
+      </Link>
       <div className="announce__title">
         <h2>Announcements</h2>
         <p>These are the recents announcements</p>
@@ -20,7 +18,7 @@ function Announcements() {
 
       <div className="announce__data">
         {announGroup &&
-          announGroup.map((item) => (
+          announGroup.slice(0, 3).map((item) => (
             <div className="announce__data__single">
               <AccountCircle
                 className="prof__icon"
@@ -29,17 +27,17 @@ function Announcements() {
 
               <div className="announce__data__single__prof">
                 <p>{item.name}</p>
-                <p className="course">Math 101</p>
+                <p className="course">{item.course}</p>
               </div>
               <hr className="vertical" />
 
               <div className="announce__data__single__content">
-                <p>{item.announcements[-1]}</p>
+                <p>{item.announcements[0].content}</p>
               </div>
             </div>
           ))}
 
-        <div className="announce__data__single">
+        {/* <div className="announce__data__single">
           <AccountCircle className="prof__icon" style={{ fontSize: "48px" }} />
 
           <div className="announce__data__single__prof">
@@ -71,9 +69,9 @@ function Announcements() {
               been postponed. A new date will be announced soon.
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="announce__data__single">
+        {/* <div className="announce__data__single">
           <AccountCircle className="prof__icon" style={{ fontSize: "48px" }} />
 
           <div className="announce__data__single__prof">
@@ -88,7 +86,7 @@ function Announcements() {
               will open on November 20th. Plan your schedule accordingly.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import express, { Request, Response, NextFunction } from "express";
 
 type RequestBody = {
   profId: string;
+  course?: string;
   announId?: string;
   title?: string;
   content?: string;
@@ -96,25 +97,11 @@ export async function announGetAll(
   next: NextFunction
 ) {
   try {
-    const announsData = await Prof.find({});
+    const announsData = await Prof.find({}, { announcements: { $slice: -1 } });
     const containsAnnouns = Object.keys(announsData).includes("announcements");
     if (!announsData || containsAnnouns) {
-      next(errorHandler(401, "no announces found"));
-    }
-
-    if (!announsData) {
       next(errorHandler(401, "no announcements found"));
     }
-
-    // console.log(announsData);
-
-    // const announs = quizzesData.map((doc) => {
-    //   return {
-    //     ...doc.quizzes,
-    //     courseName: doc.name,
-    //   };
-    // });
-    // console.log(quizzes);
 
     res.status(201).json(announsData);
   } catch (error) {
