@@ -19,6 +19,7 @@ interface Props {
 
 export const Sidebar: React.FC<Props> = ({ sidebar, handleToggleSidebar }) => {
   const [t, i18n] = useTranslation();
+  const languageFunc = false;
 
   return (
     <nav
@@ -34,27 +35,27 @@ export const Sidebar: React.FC<Props> = ({ sidebar, handleToggleSidebar }) => {
         </li>
       </Link>
 
-      <Link className="sidebar__link " to="/dashboard">
+      <Link className="sidebar__link " to="/schedule">
         <li>
           <CalendarMonth className="sidebar__icon" />
           <p>{t("Schedule")}</p>
         </li>
       </Link>
-      <Link className="sidebar__link " to="/dashboard">
+      <Link className="sidebar__link " to="/courses">
         <li>
           <ImportContacts className="sidebar__icon" />
           <p>{t("Courses")}</p>
         </li>
       </Link>
 
-      <Link className=" sidebar__link" to="/dashboard">
+      <Link className=" sidebar__link" to="/gradebook">
         <li>
           <School className="sidebar__icon" />
           <p>{t("Gradebook")}</p>
         </li>
       </Link>
 
-      <Link className=" sidebar__link" to="/dashboard">
+      <Link className=" sidebar__link" to="/performance">
         <li>
           <ShowChart className="sidebar__icon" />
           <p>{t("Performance")}</p>
@@ -69,24 +70,28 @@ export const Sidebar: React.FC<Props> = ({ sidebar, handleToggleSidebar }) => {
 
       {/* change language functionality */}
 
-      {/* {i18n.language == "en" && (
-        <button
-          onClick={() => {
-            i18n.changeLanguage("ar");
-          }}
-        >
-          AR
-        </button>
+      {languageFunc && (
+        <>
+          {i18n.language == "en" && (
+            <button
+              onClick={() => {
+                i18n.changeLanguage("ar");
+              }}
+            >
+              AR
+            </button>
+          )}
+          {i18n.language == "ar" && (
+            <button
+              onClick={() => {
+                i18n.changeLanguage("en");
+              }}
+            >
+              EN
+            </button>
+          )}
+        </>
       )}
-      {i18n.language == "ar" && (
-        <button
-          onClick={() => {
-            i18n.changeLanguage("en");
-          }}
-        >
-          EN
-        </button>
-      )} */}
     </nav>
   );
 };

@@ -1,0 +1,14 @@
+@import "../../base.scss";
+.underConst {
+  background-color: $bg-primary;
+  color: #388696;
+  text-align: center;
+  margin: auto;
+
+  height: 100vh;
+  padding: 5rem;
+
+  &__content {
+    margin-top: 50px;
+  }
+}

@@ -31,8 +31,11 @@ const App: React.FC<AppProps> = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/signin" />} />
-          <Route path="/signin" element={<SignIn />} />
-          debugger;
+          <Route
+            path="/signin"
+            element={login ? <Navigate to={"/dashboard"} /> : <SignIn />}
+          />
+
           <Route element={<PrivateRoute login={login} />}>
             <Route path="/*" element={login && <MainApp />} />
           </Route>

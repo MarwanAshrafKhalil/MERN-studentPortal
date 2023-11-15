@@ -6,6 +6,7 @@ import { ReactNode, useState } from "react";
 import Dashboard from "../pages/dashboard/Dashboard";
 import AllAnnouncements from "../pages/allAnnouncements/AllAnnouncements";
 import AllTasks from "../pages/allTasks/AllTasks";
+import UnderConst from "../pages/underConstruction/UnderConst";
 
 type LayoutProps = {
   children: ReactNode;
@@ -66,8 +67,9 @@ export const MainApp: React.FC = () => {
             </Layout>
           }
         />
+        <Route path="/pending" element={<UnderConst />} />
 
-        <Route path="/*" element={<Navigate to="/" />} />
+        <Route path="/*" element={<Navigate to="/pending" />} />
       </Routes>
     </div>
   );
