@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAppSelector } from "../redux/app/hooks";
+import React from "react";
 
 export interface PrivateRouteProps {
   login: boolean;

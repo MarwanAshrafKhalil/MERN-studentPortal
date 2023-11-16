@@ -6,6 +6,7 @@ import "./allAnnouncements.scss";
 import { useEffect } from "react";
 import { fetchAnnouns } from "../../redux/features/announs/announs.action";
 import { MoonLoader } from "react-spinners";
+import React from "react";
 
 function AllAnnouncements() {
   const dispatch = useAppDispatch();

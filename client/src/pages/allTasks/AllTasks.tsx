@@ -5,6 +5,7 @@ import "./allTasks.scss";
 import { fetchQuizzes } from "../../redux/features/quizzes/quizzes.action";
 import { useEffect } from "react";
 import { MoonLoader } from "react-spinners";
+import React from "react";
 
 function AllTasks() {
   const dispatch = useAppDispatch();

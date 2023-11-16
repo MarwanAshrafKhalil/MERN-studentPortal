@@ -7,6 +7,7 @@ import MainApp from "./components/MainApp";
 import PrivateRoute from "./components/PrivateRoute";
 import { useEffect, useState } from "react";
 import { useAppSelector } from "./redux/app/hooks";
+import React from "react";
 
 interface AppProps {}
 

@@ -6,16 +6,17 @@ import {
   AccountCircle,
   Menu,
 } from "@mui/icons-material/";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { loggOut } from "../../redux/features/signIn/signIn.action";
 import { useAppDispatch } from "../../redux/app/hooks";
+import React from "react";
 
 export interface HeaderProps {
   handleToggleSidebar: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ handleToggleSidebar }) => {
-  const [t, i18n] = useTranslation();
+  // const [t, i18n] = useTranslation();
 
   const dispatch = useAppDispatch();
 
