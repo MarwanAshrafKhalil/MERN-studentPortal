@@ -69,7 +69,7 @@ export const Sidebar: React.FC<Props> = ({ sidebar, handleToggleSidebar }) => {
         </li>
       </Link>
 
-      {/* change language functionality */}
+      {/* change languagefunctionality */}
 
       {languageFunc && (
         <>
